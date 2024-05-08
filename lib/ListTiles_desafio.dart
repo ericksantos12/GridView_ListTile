@@ -15,29 +15,28 @@ class MyApp extends StatelessWidget {
   final List<Cliente> clientes = [
     Cliente(
         nome: 'Gabrielle Carvalho',
-        endereco: 'Av. dos Seilaoq, MG',
+        endereco: 'Av. das Moças Bonitas',
         telefone: '(79) 2337-3627'),
     Cliente(
-        nome: 'Gabrielle Teixeira',
-        endereco: 'Avenida Esbertalina Barbosa Damiani, RN',
+        nome: 'Thiago dos Santos Lucas',
+        endereco: 'Rua da Pamonha, RN',
         telefone: '(84) 2504-6669'),
     Cliente(
         nome: 'Felipe Valeriano',
-        endereco: 'Rua Pereira EstÃ©fano, SP',
+        endereco: 'Rua União Popular, SP',
         telefone: '(12) 2351-2811'),
     Cliente(
-        nome: 'Erick',
-        endereco: 'Rua Cristiano Olsen, SP',
+        nome: 'Erick Santos SOUZA',
+        endereco: 'Rua Adolfo, SP',
         telefone: '(11) 3756-3376'),
-    Cliente(
-        nome: 'Larissa Santos',
-        endereco: 'Avenida Rio Branco, RJ',
-        telefone: '(21) 2478-9143'),
   ];
+
+  MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Clientees',
+      title: 'Clientes',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -50,6 +49,7 @@ class MyApp extends StatelessWidget {
           itemBuilder: (context, index) {
             return Card(
               child: ListTile(
+                leading: CircleAvatar(backgroundImage: NetworkImage("https://api.dicebear.com/8.x/lorelei/png?seed=${clientes[index].nome}"),),
                 title: Text(clientes[index].nome),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
